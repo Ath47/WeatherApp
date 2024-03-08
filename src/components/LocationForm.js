@@ -20,7 +20,7 @@ export default function LocationForm() {
   const [desc, setDesc] = useState("");
   const [isCelsius, setIsCelsius] = useState(true);
 
-  const API_KEY = "5ceeb1fb58124ce8c02440bb44cf8419";
+  const API_KEY = "Your API KEY";
 
   const handleSubmit = (e) => {
     e.preventDefault();
