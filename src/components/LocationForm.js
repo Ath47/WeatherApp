@@ -20,13 +20,13 @@ export default function LocationForm() {
   const [desc, setDesc] = useState("");
   const [isCelsius, setIsCelsius] = useState(true);
 
-  const API_KEY = "Your API key";
+  const API_KEY = "5ceeb1fb58124ce8c02440bb44cf8419";
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (city === "") {
-      setInvalidCity(true);
       setSubmitted(true);
+      setInvalidCity(true);
       setValidCity(false);
     } else {
       setInvalidCity(false);
@@ -84,6 +84,7 @@ export default function LocationForm() {
       .catch((error) => {
         console.error("Error fetching weather data:", error);
       });
+      setInvalidCity(false);
   };
 
   const handleChange = (e) => {
@@ -95,6 +96,9 @@ export default function LocationForm() {
   };
 
   const getCurrentLocation = () => {
+    
+    setSubmitted(false);
+    setInvalidCity(false);
     if ("geolocation" in navigator) {
       navigator.geolocation.getCurrentPosition(
         function (position) {
