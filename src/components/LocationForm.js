@@ -26,6 +26,7 @@ export default function LocationForm() {
     e.preventDefault();
     if (city === "") {
       setInvalidCity(true);
+      setSubmitted(true);
       setValidCity(false);
     } else {
       setInvalidCity(false);
