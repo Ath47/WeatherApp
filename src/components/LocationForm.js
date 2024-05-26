@@ -20,7 +20,7 @@ export default function LocationForm() {
   const [desc, setDesc] = useState("");
   const [isCelsius, setIsCelsius] = useState(true);
 
-  const API_KEY = "Your API KEY";
+  const KEY = process.env.REACT_APP_WEATHER_Key;
 
   const handleSubmit = (e) => {
     e.preventDefault();
