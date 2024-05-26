@@ -27,7 +27,7 @@ export default function SixDayForecastPage() {
   }, [city]);
 
   const fetchForecastData = (city) => {
-    const API_KEY = "Your API key";
+    const KEY = process.env.REACT_APP_WEATHER_Key;
     fetch(
       `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}`
     )
